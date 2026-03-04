@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from typing import Optional
 
+# Pydantic schemas for tasks
+
 class TaskBase(BaseModel):
     title: str
 
@@ -15,6 +17,19 @@ class TaskResponse(TaskBase):
     id: int
     completed: bool
     owner_id: Optional[int]
+
+    class Config:
+        orm_mode = True
+
+# Pydantic schemas for users
+
+class UserCreate(BaseModel):
+    email: str
+    password: str
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
 
     class Config:
         orm_mode = True
