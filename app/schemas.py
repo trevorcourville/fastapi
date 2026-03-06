@@ -19,7 +19,7 @@ class TaskResponse(TaskBase):
     owner_id: Optional[int]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Pydantic schemas for users
 
@@ -32,4 +32,4 @@ class UserResponse(BaseModel):
     email: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
