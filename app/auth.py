@@ -7,10 +7,9 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app import models
+from app.config import SECRET_KEY, ACCESS_TOKEN_EXPIRE_MINUTES
 
-SECRET_KEY = "supersecretkey"  # later move to environment variable
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
